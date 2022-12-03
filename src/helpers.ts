@@ -1,3 +1,11 @@
+import { BinaryLike, createHash } from 'crypto';
+
+interface ValidateHash {
+  hash: string;
+  difficulty: number;
+  prefix: string;
+}
+
 export function hash(data: BinaryLike): string {
   return createHash('sha256').update(data).digest('hex');
 }
